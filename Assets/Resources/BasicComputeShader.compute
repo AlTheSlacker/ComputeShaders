@@ -1,0 +1,20 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel DoubleIndex
+
+// output is read in, modified and written out
+RWStructuredBuffer<double> cs_array;
+StructuredBuffer<double> ref_array;
+
+// define the thread group
+// each cell in the X x Y x Z 3 dimensoinal grid is a thread
+// so number of threads is a shader group is = X x Y x Z
+// this should match the data structures being operated on
+[numthreads(32,1,1)]
+
+// a function to run in the compute shader, must be declared with #pragma kernel <func_name> at top
+void DoubleIndex (uint3 id : SV_DispatchThreadID)
+{
+
+	cs_array[id.x] = id.x * 2;
+
+}
