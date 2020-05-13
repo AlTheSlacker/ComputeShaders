@@ -1,5 +1,5 @@
 # ComputeShaders
- Basic implementation of a compute shader
+ Basic implementation of a compute shader:
  
  Called from Unity MonoBehaviour with Scripts/ShaderController.cs
  
