@@ -6,7 +6,7 @@ RWStructuredBuffer<double> cs_array;
 StructuredBuffer<double> ref_array;
 
 // define the thread group
-// each cell in the X x Y x Z 3 dimensoinal grid is a thread
+// each cell in the X x Y x Z 3 dimensional grid is a thread
 // so number of threads is a shader group is = X x Y x Z
 // this should match the data structures being operated on
 [numthreads(32,1,1)]
